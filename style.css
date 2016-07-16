@@ -1,4 +1,8 @@
-maindiv{
+.maindiv{
     margin: 0 auto;
-    width: 400px;
+    width: 800px;
+    height: 1000px;
+    background: #386688;
+    text-align: center;
+    padding-top:30px;
 }
