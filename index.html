@@ -4,6 +4,11 @@
   <title>Alexander Køpke</title>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <style>
+    #reverse{
+        unicode-bidi:bidi-override;
+        direction:rtl;
+    }
+    
     @import url('https://fonts.googleapis.com/css?family=Lato');
     html{
       font-family: 'Lato', sans-serif;
@@ -36,7 +41,7 @@
         Contact me:
         <a :href="contactURL" target="_blank">
           {{ humanizeURL(contactURL) }}
-        </a>
+        </a> email: <span id="reverse">moc.kooltuo@ekpokrednaxela</span>
       </li>
       <li>
         You can often find me here helping people learning to code:
