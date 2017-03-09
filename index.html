@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Alexander Køpke</title>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <style>
-    #reverse{
-        unicode-bidi:bidi-override;
-        direction:rtl;
-    }
-    
-    @import url('https://fonts.googleapis.com/css?family=Lato');
-    html{
-      font-family: 'Lato', sans-serif;
-      background: url('picture.jpg') no-repeat center center fixed;
-      background-size: cover;
-      height: 100%;
-
-    }
-    #app{
-      background-color: white;
-      height: 400px;
-      width: 700px;
-      margin: 100px auto;
-      border-radius: 10px;
-      padding: 20px;
-
-    }
-    h1{
-      font-size: 1.6em;
-    }
-  </style>
+    <title>Alexander Køpke</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <style>
+        #reverse {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        
+        @import url('https://fonts.googleapis.com/css?family=Lato');
+        html {
+            font-family: 'Lato', sans-serif;
+            background: url('picture.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100%;
+        }
+        
+        #app {
+            background-color: white;
+            height: 400px;
+            width: 700px;
+            margin: 100px auto;
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 1.6em;
+        }
+    </style>
 </head>
-<body>
-  <div id="app">
 
-    <h1>{{ greeting }}</h1>
-    <p>{{ about }}</p>
-    <p>{{ code }}<br>
-    {{ learn }}</p>
-    <p>{{ skills }}</p>
-    <ul>
-      <li>
-        Contact me:
-        <a :href="contactURL" target="_blank">
+<body>
+    <div id="app">
+
+        <h1>{{ greeting }}</h1>
+        <p>{{ about }}</p>
+        <p>{{ code }}
+            <br> {{ learn }}</p>
+        <p>{{ skills }}</p>
+        <ul>
+            <li>
+                Contact me:
+                <a :href="contactURL" target="_blank">
           {{ humanizeURL(contactURL) }}
         </a> email: <span id="reverse">moc.kooltuo@ekpokrednaxela</span>
-      </li>
-      <li>
-        You can often find me here helping people learning to code:
-        <a :href="gitterURL" target="_blank">
+            </li>
+            <li>
+                You can often find me here helping people learning to code:
+                <a :href="gitterURL" target="_blank">
           FCC Gitter chat
         </a>
-      </li>
-      <li>
+            </li>
+            <li>
 
-        <a :href="githubURL" target="_blank">
+                <a :href="githubURL" target="_blank">
           Github page
         </a>
-      </li>
-    </ul>
-  </div>
+            </li>
+            <li>
+                <a href="https://alexanderkopke.github.io/poster">Poster</a> - mini-project to help those on gitter.im who have trouble posting code correctly
+            </li>
+        </ul>
+    </div>
 
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        greeting: 'Welcome to my simple page about... ahem me! ',
-        about: 'My name is Alexander Køpke and I am from Denmark.',
-        code: 'I consider myself a \'self-taught\' newbie web developer but am starting to see the big picture!',
-        learn:'Self-taught in that I take courses online (primarily Udemy and FreeCodeCamp) and try to apply what I learned.',
-        skills: 'My skillsets include: HTML5, CSS(Bootstrap, Semantic-ui), JavaScript(jQuery, Node(Express), Vuejs(Vue-CLI)), MongoDB, Webpack, and basic WordPress.',
-        contactURL: 'https://twitter.com/alexanderkopke/',
-        gitterURL: 'https://gitter.im/FreeCodeCamp/Help',
-        githubURL: 'https://github.com/alexanderkopke?'
-      },
-      methods: {
-        humanizeURL: function (url) {
-          return url
-            .replace(/^https?:\/\//, '')
-            .replace(/\/$/, '')
-        }
-      }
-    })
-  </script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                greeting: 'Welcome to my simple page about... ahem me! ',
+                about: 'My name is Alexander Køpke and I am from Denmark.',
+                code: 'I consider myself a \'self-taught\' newbie web developer but am starting to see the big picture!',
+                learn: 'Self-taught in that I take courses online (primarily Udemy and FreeCodeCamp) and try to apply what I learned.',
+                skills: 'My skillsets include: HTML5, CSS(Bootstrap, Semantic-ui), JavaScript(jQuery, Node(Express), Vuejs(Vue-CLI)), MongoDB, Webpack, and basic WordPress.',
+                contactURL: 'https://twitter.com/alexanderkopke/',
+                gitterURL: 'https://gitter.im/FreeCodeCamp/Help',
+                githubURL: 'https://github.com/alexanderkopke?'
+            },
+            methods: {
+                humanizeURL: function (url) {
+                    return url
+                        .replace(/^https?:\/\//, '')
+                        .replace(/\/$/, '')
+                }
+            }
+        })
+    </script>
 </body>
+
 </html>
