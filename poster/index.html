@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background: url(eiffel.jpg) no-repeat center center;
+            background-size: cover;
+        }
+        
+        #main {
+            font-family: 'Raleway', sans-serif;
+            width: 800px;
+            height: 800px;
+            margin: 250px auto;
+        }
+        
+        h1 {
+            color: azure;
+        }
+        
+        textarea {
+            height: 200px;
+            font-size: 1.2em;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+        <h1>Add them backticks!</h1>
+        <textarea name="" id="text" cols="70" rows="20"></textarea>
+        <br>
+
+        <button class="button-primary" id="btn" data-clipboard-target="#text">Add backticks and copy to clipboard</button>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.0/clipboard.min.js"></script>
+    <script>
+        var text = '';
+        new Clipboard('#btn');
+
+        document.getElementById('btn').addEventListener('click', function () {
+            // reset text
+            text = '';
+            // grab text
+            text = document.getElementById('text').value;
+            // add backticks to it
+            text = '```\n' + text + '\n```';
+            // replace original text with new backticked text
+            document.getElementById('text').value = text;
+            // copy it to clipboard
+        });
+    </script>
+</body>
+
+</html>
